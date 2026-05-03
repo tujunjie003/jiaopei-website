@@ -12,178 +12,149 @@
         * {
             font-family: 'Noto Sans SC', sans-serif;
         }
-        .gradient-text {
-            background: linear-gradient(135deg, #F97316, #FB923C);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
+        :root {
+            --accent: #F97316;
+            --accent-light: #FED7AA;
         }
         .btn-primary {
-            background: linear-gradient(135deg, #F97316, #FB923C);
+            background: var(--accent);
             color: white;
         }
         .btn-primary:hover {
-            background: linear-gradient(135deg, #EA580C, #F97316);
+            filter: brightness(1.1);
         }
-        
-        /* 长颈鹿花纹背景 */
-        .giraffe-pattern {
-            background-color: #FEF3E2;
-            background-image: 
-                radial-gradient(circle at 20% 30%, #E8751A 8px, transparent 8px),
-                radial-gradient(circle at 60% 20%, #E8751A 6px, transparent 6px),
-                radial-gradient(circle at 80% 50%, #E8751A 10px, transparent 10px),
-                radial-gradient(circle at 40% 70%, #E8751A 7px, transparent 7px),
-                radial-gradient(circle at 10% 80%, #E8751A 5px, transparent 5px),
-                radial-gradient(circle at 70% 85%, #E8751A 8px, transparent 8px),
-                radial-gradient(circle at 90% 10%, #E8751A 6px, transparent 6px),
-                radial-gradient(circle at 30% 50%, #E8751A 4px, transparent 4px);
+        .text-accent {
+            color: var(--accent);
         }
-        
-        /* 导航栏长颈鹿条纹 */
-        .nav-stripe {
-            background: linear-gradient(135deg, #F97316 0%, #FEF3E2 20%, #F97316 40%, #FEF3E2 60%, #F97316 80%, #FEF3E2 100%);
-            background-size: 100% 8px;
+        .bg-accent-light {
+            background: var(--accent-light);
         }
     </style>
 </head>
-<body class="bg-white text-gray-800">
+<body class="bg-white text-gray-800 antialiased">
 
     <!-- 导航栏 -->
-    <nav class="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-sm shadow-sm">
-        <div class="h-1 nav-stripe"></div>
-        <div class="max-w-6xl mx-auto px-6 py-4">
+    <nav class="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-sm border-b border-gray-100">
+        <div class="max-w-7xl mx-auto px-6 lg:px-12 py-5">
             <div class="flex items-center justify-between">
                 <div class="flex items-center gap-3">
-                    <div class="w-12 h-12 rounded-full bg-gradient-to-br from-orange-400 to-orange-600 flex items-center justify-center shadow-md">
-                        <span class="text-white text-2xl"></span>
+                    <div class="w-11 h-11 rounded-full bg-gradient-to-br from-orange-400 to-orange-600 flex items-center justify-center shadow-sm">
+                        <span class="text-white font-bold text-lg">G</span>
                     </div>
-                    <span class="text-xl font-bold gradient-text">芜湖长颈鹿成长中心</span>
+                    <span class="text-xl font-bold text-gray-900 tracking-tight">芜湖长颈鹿成长中心</span>
                 </div>
-                <div class="hidden md:flex items-center gap-8">
-                    <a href="#home" class="text-gray-600 hover:text-orange-500 transition-colors font-medium">首页</a>
-                    <a href="#courses" class="text-gray-600 hover:text-orange-500 transition-colors font-medium">课程</a>
-                    <a href="#about" class="text-gray-600 hover:text-orange-500 transition-colors font-medium">关于</a>
-                    <a href="#contact" class="text-gray-600 hover:text-orange-500 transition-colors font-medium">联系</a>
+                <div class="hidden md:flex items-center gap-10">
+                    <a href="#home" class="text-sm text-gray-500 hover:text-gray-900 transition-colors">首页</a>
+                    <a href="#courses" class="text-sm text-gray-500 hover:text-gray-900 transition-colors">课程</a>
+                    <a href="#about" class="text-sm text-gray-500 hover:text-gray-900 transition-colors">关于</a>
+                    <a href="#contact" class="text-sm text-gray-500 hover:text-gray-900 transition-colors">联系</a>
                 </div>
-                <a href="#booking" class="bg-orange-500 text-white px-6 py-2 rounded-full font-medium hover:bg-orange-600 transition-all">
-                    预约试听
+                <a href="#booking" class="btn-primary px-6 py-2.5 rounded-full text-sm font-medium transition-all hover:shadow-md">
+                    免费预约试课
                 </a>
             </div>
         </div>
-        <div class="h-1 nav-stripe"></div>
     </nav>
 
-    <!-- Banner区域 -->
-    <section id="home" class="relative min-h-screen flex items-center justify-center pt-16 bg-orange-50">
-        <div class="absolute inset-0 bg-gradient-to-br from-orange-100/50 via-transparent to-orange-50/50"></div>
-        
-        <!-- 装饰 -->
-        <div class="absolute top-32 right-10 text-9xl opacity-10"></div>
-        <div class="absolute bottom-20 left-10 text-8xl opacity-10"></div>
-        
-        <div class="relative z-10 text-center max-w-4xl mx-auto px-6">
-            <div class="inline-block mb-6">
-                <span class="text-6xl"></span>
-            </div>
-            <p class="text-orange-600 font-medium tracking-widest mb-6">WUHU GIRAFFE GROWTH CENTER</p>
-            <h1 class="text-5xl md:text-7xl font-bold mb-8 leading-tight">
-                让每个孩子<br>
-                <span class="gradient-text">成为更好的自己</span>
-            </h1>
-            <p class="text-xl text-gray-600 mb-12 max-w-2xl mx-auto">
-                专注3-12岁幼少儿英语数学培优<br>
-                用专业和热爱，点亮孩子的成长之路
-            </p>
-            <div class="flex flex-wrap justify-center gap-4">
-                <a href="#booking" class="bg-orange-500 text-white px-10 py-4 rounded-full font-bold text-lg hover:bg-orange-600 transition-all">
-                    预约试听
-                </a>
-                <a href="#courses" class="border-2 border-orange-500 text-orange-500 px-10 py-4 rounded-full font-bold text-lg hover:bg-orange-100 transition-all">
-                    了解课程
-                </a>
-            </div>
-        </div>
-        
-        <div class="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
-            <svg class="w-8 h-8 text-orange-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
-            </svg>
-        </div>
-    </section>
-
-    <!-- 数据展示 -->
-    <section class="py-16 bg-white">
-        <div class="max-w-6xl mx-auto px-6">
-            <div class="grid grid-cols-3 gap-8 text-center">
-                <div class="p-8">
-                    <div class="text-5xl font-bold gradient-text mb-2">300+</div>
-                    <div class="text-gray-500">在读学员</div>
-                </div>
-                <div class="p-8 border-x-2 border-orange-100">
-                    <div class="text-5xl font-bold gradient-text mb-2">6年</div>
-                    <div class="text-gray-500">办学经验</div>
-                </div>
-                <div class="p-8">
-                    <div class="text-5xl font-bold gradient-text mb-2">98%</div>
-                    <div class="text-gray-500">家长好评</div>
+    <!-- Banner区域 - 分割布局 -->
+    <section id="home" class="pt-24 lg:pt-0">
+        <div class="grid lg:grid-cols-2 min-h-[100dvh]">
+            <!-- 左侧文字 -->
+            <div class="flex flex-col justify-center px-6 lg:px-16 xl:px-24 py-16 lg:py-0">
+                <p class="text-accent text-sm font-medium tracking-widest uppercase mb-6">Wuhu Giraffe Growth Center</p>
+                <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight leading-[1.1] mb-8">
+                    让每个孩子<br>
+                    <span class="text-accent">成为更好的自己</span>
+                </h1>
+                <p class="text-base text-gray-600 leading-relaxed max-w-[50ch] mb-10">
+                    专注3-12岁幼少儿英语数学培优<br>
+                    用专业和热爱，点亮孩子的成长之路
+                </p>
+                <div class="flex flex-wrap gap-4">
+                    <a href="#booking" class="btn-primary px-8 py-3.5 rounded-full font-medium transition-all hover:shadow-lg">
+                        免费预约试课
+                    </a>
+                    <a href="#courses" class="border border-gray-300 px-8 py-3.5 rounded-full font-medium text-gray-700 hover:border-gray-400 transition-all">
+                        了解课程
+                    </a>
                 </div>
             </div>
-        </div>
-    </section>
-
-    <!-- 课程区域 -->
-    <section id="courses" class="py-24 bg-white">
-        <div class="max-w-6xl mx-auto px-6">
-            <div class="text-center mb-16">
-                <div class="text-5xl mb-4"></div>
-                <p class="text-orange-500 font-medium tracking-widest mb-4">COURSES</p>
-                <h2 class="text-4xl md:text-5xl font-bold mb-4">精选课程</h2>
-                <p class="text-gray-600 max-w-xl mx-auto">专为3-12岁儿童设计，科学分龄，趣味教学</p>
-            </div>
-            
-            <div class="grid md:grid-cols-2 gap-10">
-                <!-- 英语课程 -->
-                <div class="bg-gradient-to-br from-orange-50 to-white rounded-3xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300 border-2 border-orange-100">
-                    <div class="h-64 relative">
-                        <img src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=800&h=400&fit=crop" 
-                             alt="英语课堂" class="w-full h-full object-cover">
-                        <div class="absolute top-6 left-6 bg-white/95 backdrop-blur px-6 py-2 rounded-full text-orange-600 font-bold shadow-md">
-                             英语系列
+            <!-- 右侧图片 -->
+            <div class="relative bg-accent-light">
+                <img src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=800&h=1000&fit=crop" 
+                     alt="孩子们在学习" 
+                     class="w-full h-full object-cover">
+                <!-- 数据卡片 -->
+                <div class="absolute bottom-8 left-8 right-8 bg-white/95 backdrop-blur-sm rounded-2xl p-6 shadow-lg">
+                    <div class="grid grid-cols-3 gap-6 text-center">
+                        <div>
+                            <div class="text-3xl font-bold text-accent">300+</div>
+                            <div class="text-sm text-gray-500 mt-1">在读学员</div>
+                        </div>
+                        <div class="border-x border-gray-200">
+                            <div class="text-3xl font-bold text-gray-900">6年</div>
+                            <div class="text-sm text-gray-500 mt-1">办学经验</div>
+                        </div>
+                        <div>
+                            <div class="text-3xl font-bold text-gray-900">98%</div>
+                            <div class="text-sm text-gray-500 mt-1">家长好评</div>
                         </div>
                     </div>
-                    <div class="p-10">
-                        <h3 class="text-3xl font-bold mb-4">英语魔法班</h3>
-                        <p class="text-gray-600 mb-6 leading-relaxed">自然拼读 + 趣味阅读 + 口语表达<br>培养英语思维，激发学习兴趣</p>
-                        <div class="flex flex-wrap gap-3 mb-8">
-                            <span class="bg-orange-100 text-orange-700 px-5 py-2 rounded-full font-medium">3-6岁 启蒙</span>
-                            <span class="bg-orange-100 text-orange-700 px-5 py-2 rounded-full font-medium">7-9岁 进阶</span>
-                            <span class="bg-orange-100 text-orange-700 px-5 py-2 rounded-full font-medium">10-12岁 培优</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 课程区域 - 非对称布局 -->
+    <section id="courses" class="py-24 lg:py-32 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-6 lg:px-12">
+            <div class="mb-16">
+                <p class="text-accent text-sm font-medium tracking-widest uppercase mb-4">Courses</p>
+                <h2 class="text-3xl md:text-4xl font-bold tracking-tight">精选课程</h2>
+            </div>
+            
+            <div class="grid lg:grid-cols-2 gap-8 lg:gap-12">
+                <!-- 英语课程 -->
+                <div class="bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-lg transition-shadow duration-300">
+                    <div class="aspect-[16/10] relative">
+                        <img src="https://images.unsplash.com/photo-1546410531-bb4caa6b424d?w=800&h=500&fit=crop" 
+                             alt="英语课堂" class="w-full h-full object-cover">
+                        <div class="absolute top-5 left-5 bg-white/95 backdrop-blur-sm px-4 py-1.5 rounded-full text-sm font-medium text-accent">
+                            英语系列
                         </div>
-                        <a href="#booking" class="btn-primary inline-block px-10 py-4 rounded-full font-bold hover:shadow-lg transition-all">
+                    </div>
+                    <div class="p-8 lg:p-10">
+                        <h3 class="text-2xl font-bold mb-4">英语魔法班</h3>
+                        <p class="text-gray-600 leading-relaxed mb-6">自然拼读 + 趣味阅读 + 口语表达<br>培养英语思维，激发学习兴趣</p>
+                        <div class="flex flex-wrap gap-2 mb-8">
+                            <span class="bg-accent-light text-accent px-4 py-1.5 rounded-full text-sm">3-6岁 启蒙</span>
+                            <span class="bg-accent-light text-accent px-4 py-1.5 rounded-full text-sm">7-9岁 进阶</span>
+                            <span class="bg-accent-light text-accent px-4 py-1.5 rounded-full text-sm">10-12岁 培优</span>
+                        </div>
+                        <a href="#booking" class="btn-primary inline-block px-8 py-3 rounded-full font-medium transition-all hover:shadow-md">
                             立即报名
                         </a>
                     </div>
                 </div>
 
                 <!-- 数学课程 -->
-                <div class="bg-gradient-to-br from-gray-50 to-white rounded-3xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300 border-2 border-gray-200">
-                    <div class="h-64 relative">
-                        <img src="https://images.unsplash.com/photo-1635070041078-e363dbe005cb?w=800&h=400&fit=crop" 
+                <div class="bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-lg transition-shadow duration-300 lg:mt-16">
+                    <div class="aspect-[16/10] relative">
+                        <img src="https://images.unsplash.com/photo-1635070041078-e363dbe005cb?w=800&h=500&fit=crop" 
                              alt="数学课堂" class="w-full h-full object-cover">
-                        <div class="absolute top-6 left-6 bg-white/95 backdrop-blur px-6 py-2 rounded-full text-gray-800 font-bold shadow-md">
-                             数学系列
+                        <div class="absolute top-5 left-5 bg-white/95 backdrop-blur-sm px-4 py-1.5 rounded-full text-sm font-medium text-gray-800">
+                            数学系列
                         </div>
                     </div>
-                    <div class="p-10">
-                        <h3 class="text-3xl font-bold mb-4">数学思维营</h3>
-                        <p class="text-gray-600 mb-6 leading-relaxed">趣味数学 + 思维训练 + 解题技巧<br>培养逻辑思维，提升数学能力</p>
-                        <div class="flex flex-wrap gap-3 mb-8">
-                            <span class="bg-gray-100 text-gray-700 px-5 py-2 rounded-full font-medium">3-6岁 启蒙</span>
-                            <span class="bg-gray-100 text-gray-700 px-5 py-2 rounded-full font-medium">7-9岁 进阶</span>
-                            <span class="bg-gray-100 text-gray-700 px-5 py-2 rounded-full font-medium">10-12岁 培优</span>
+                    <div class="p-8 lg:p-10">
+                        <h3 class="text-2xl font-bold mb-4">数学思维营</h3>
+                        <p class="text-gray-600 leading-relaxed mb-6">趣味数学 + 思维训练 + 解题技巧<br>培养逻辑思维，提升数学能力</p>
+                        <div class="flex flex-wrap gap-2 mb-8">
+                            <span class="bg-gray-100 text-gray-700 px-4 py-1.5 rounded-full text-sm">3-6岁 启蒙</span>
+                            <span class="bg-gray-100 text-gray-700 px-4 py-1.5 rounded-full text-sm">7-9岁 进阶</span>
+                            <span class="bg-gray-100 text-gray-700 px-4 py-1.5 rounded-full text-sm">10-12岁 培优</span>
                         </div>
-                        <a href="#booking" class="bg-gray-800 text-white inline-block px-10 py-4 rounded-full font-bold hover:bg-gray-900 transition-all">
+                        <a href="#booking" class="inline-block bg-gray-900 text-white px-8 py-3 rounded-full font-medium transition-all hover:bg-gray-800">
                             立即报名
                         </a>
                     </div>
@@ -192,79 +163,77 @@
         </div>
     </section>
 
-    <!-- 关于我们 -->
-    <section id="about" class="py-24 giraffe-pattern">
-        <div class="max-w-6xl mx-auto px-6">
-            <div class="grid md:grid-cols-2 gap-16 items-center">
-                <div>
-                    <img src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=600&h=500&fit=crop" 
-                         alt="校区环境" class="rounded-3xl shadow-2xl">
-                </div>
-                <div>
-                    <div class="text-5xl mb-6"></div>
-                    <p class="text-orange-500 font-medium tracking-widest mb-4">ABOUT US</p>
-                    <h2 class="text-4xl font-bold mb-8">关于芜湖长颈鹿成长中心</h2>
-                    <p class="text-gray-600 mb-10 leading-relaxed text-lg">
+    <!-- 关于我们 - 分割布局 -->
+    <section id="about" class="py-24 lg:py-32">
+        <div class="max-w-7xl mx-auto px-6 lg:px-12">
+            <div class="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+                <div class="order-2 lg:order-1">
+                    <p class="text-accent text-sm font-medium tracking-widest uppercase mb-4">About Us</p>
+                    <h2 class="text-3xl md:text-4xl font-bold tracking-tight mb-8">关于芜湖长颈鹿成长中心</h2>
+                    <p class="text-gray-600 leading-relaxed max-w-[55ch] mb-10 text-lg">
                         芜湖长颈鹿成长中心是一家专注于3-12岁幼少儿英语数学培优的教育机构。
                         我们相信每个孩子都有独特的潜能，用专业和爱心的教育方式，
                         帮助孩子在学习道路上建立信心，收获成长。
                     </p>
                     <div class="space-y-6">
-                        <div class="flex items-start gap-5 p-5 bg-white rounded-2xl shadow-sm">
-                            <div class="w-14 h-14 rounded-full bg-orange-100 flex items-center justify-center flex-shrink-0">
-                                <span class="text-2xl"></span>
+                        <div class="flex items-start gap-5">
+                            <div class="w-12 h-12 rounded-xl bg-accent-light flex items-center justify-center flex-shrink-0">
+                                <span class="text-xl font-bold text-accent">1</span>
                             </div>
                             <div>
-                                <h4 class="font-bold text-lg mb-1">精准定位</h4>
-                                <p class="text-gray-500">根据孩子年龄和基础，匹配合适班级</p>
+                                <h4 class="font-bold mb-1">精准定位</h4>
+                                <p class="text-gray-500 text-sm">根据孩子年龄和基础，匹配合适班级</p>
                             </div>
                         </div>
-                        <div class="flex items-start gap-5 p-5 bg-white rounded-2xl shadow-sm">
-                            <div class="w-14 h-14 rounded-full bg-orange-100 flex items-center justify-center flex-shrink-0">
-                                <span class="text-2xl"></span>
+                        <div class="flex items-start gap-5">
+                            <div class="w-12 h-12 rounded-xl bg-accent-light flex items-center justify-center flex-shrink-0">
+                                <span class="text-xl font-bold text-accent">2</span>
                             </div>
                             <div>
-                                <h4 class="font-bold text-lg mb-1">趣味引导</h4>
-                                <p class="text-gray-500">用游戏和故事激发学习兴趣</p>
+                                <h4 class="font-bold mb-1">趣味引导</h4>
+                                <p class="text-gray-500 text-sm">用游戏和故事激发学习兴趣</p>
                             </div>
                         </div>
-                        <div class="flex items-start gap-5 p-5 bg-white rounded-2xl shadow-sm">
-                            <div class="w-14 h-14 rounded-full bg-orange-100 flex items-center justify-center flex-shrink-0">
-                                <span class="text-2xl"></span>
+                        <div class="flex items-start gap-5">
+                            <div class="w-12 h-12 rounded-xl bg-accent-light flex items-center justify-center flex-shrink-0">
+                                <span class="text-xl font-bold text-accent">3</span>
                             </div>
                             <div>
-                                <h4 class="font-bold text-lg mb-1">效果可见</h4>
-                                <p class="text-gray-500">定期汇报学习进度和成长变化</p>
+                                <h4 class="font-bold mb-1">效果可见</h4>
+                                <p class="text-gray-500 text-sm">定期汇报学习进度和成长变化</p>
                             </div>
                         </div>
                     </div>
+                </div>
+                <div class="order-1 lg:order-2">
+                    <img src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=600&h=700&fit=crop" 
+                         alt="校区环境" class="w-full rounded-3xl shadow-xl">
                 </div>
             </div>
         </div>
     </section>
 
     <!-- 预约体验 -->
-    <section id="booking" class="py-24 bg-white">
+    <section id="booking" class="py-24 lg:py-32 bg-gray-50">
         <div class="max-w-3xl mx-auto px-6">
             <div class="text-center mb-12">
-                <div class="text-5xl mb-4"></div>
-                <p class="text-orange-500 font-medium tracking-widest mb-4">BOOKING</p>
-                <h2 class="text-4xl font-bold mb-4">免费预约试课</h2>
+                <p class="text-accent text-sm font-medium tracking-widest uppercase mb-4">Booking</p>
+                <h2 class="text-3xl md:text-4xl font-bold tracking-tight mb-4">预约试听</h2>
                 <p class="text-gray-600">填写信息，我们将在24小时内与您联系</p>
             </div>
-            <div class="bg-gradient-to-br from-orange-50 to-white rounded-3xl shadow-xl p-12 border-2 border-orange-100">
+            <div class="bg-white rounded-3xl shadow-sm p-10 lg:p-12">
                 <form id="bookingForm" class="space-y-6">
-                    <div class="grid md:grid-cols-2 gap-8">
+                    <div class="grid md:grid-cols-2 gap-6">
                         <div>
-                            <label class="block text-sm font-medium mb-3">孩子姓名 <span class="text-red-500">*</span></label>
+                            <label class="block text-sm font-medium mb-2">孩子姓名 <span class="text-red-500">*</span></label>
                             <input type="text" name="childName" required
-                                   class="w-full px-5 py-4 rounded-xl border-2 border-gray-200 focus:ring-2 focus:ring-orange-400 focus:border-orange-400 outline-none transition-all"
+                                   class="w-full px-5 py-3.5 rounded-xl border-2 border-gray-200 focus:border-orange-400 focus:ring-0 outline-none transition-colors"
                                    placeholder="请输入孩子姓名">
                         </div>
                         <div>
-                            <label class="block text-sm font-medium mb-3">孩子年龄 <span class="text-red-500">*</span></label>
+                            <label class="block text-sm font-medium mb-2">孩子年龄 <span class="text-red-500">*</span></label>
                             <select name="childAge" required
-                                    class="w-full px-5 py-4 rounded-xl border-2 border-gray-200 focus:ring-2 focus:ring-orange-400 focus:border-orange-400 outline-none transition-all">
+                                    class="w-full px-5 py-3.5 rounded-xl border-2 border-gray-200 focus:border-orange-400 focus:ring-0 outline-none transition-colors">
                                 <option value="">请选择年龄</option>
                                 <option value="3-4">3-4岁</option>
                                 <option value="5-6">5-6岁</option>
@@ -275,39 +244,38 @@
                         </div>
                     </div>
                     <div>
-                        <label class="block text-sm font-medium mb-3">联系电话 <span class="text-red-500">*</span></label>
+                        <label class="block text-sm font-medium mb-2">联系电话 <span class="text-red-500">*</span></label>
                         <input type="tel" name="phone" required
-                               class="w-full px-5 py-4 rounded-xl border-2 border-gray-200 focus:ring-2 focus:ring-orange-400 focus:border-orange-400 outline-none transition-all"
+                               class="w-full px-5 py-3.5 rounded-xl border-2 border-gray-200 focus:border-orange-400 focus:ring-0 outline-none transition-colors"
                                placeholder="请输入手机号">
                     </div>
                     <div>
-                        <label class="block text-sm font-medium mb-3">意向课程</label>
-                        <div class="flex flex-wrap gap-6">
-                            <label class="flex items-center gap-3 cursor-pointer">
-                                <input type="checkbox" name="course" value="english" class="w-5 h-5 text-orange-500 rounded">
-                                <span class="font-medium">英语</span>
+                        <label class="block text-sm font-medium mb-2">意向课程</label>
+                        <div class="flex gap-8">
+                            <label class="flex items-center gap-2 cursor-pointer">
+                                <input type="checkbox" name="course" value="english" class="w-4 h-4 rounded text-orange-500">
+                                <span>英语</span>
                             </label>
-                            <label class="flex items-center gap-3 cursor-pointer">
-                                <input type="checkbox" name="course" value="math" class="w-5 h-5 text-orange-500 rounded">
-                                <span class="font-medium">数学</span>
+                            <label class="flex items-center gap-2 cursor-pointer">
+                                <input type="checkbox" name="course" value="math" class="w-4 h-4 rounded text-orange-500">
+                                <span>数学</span>
                             </label>
                         </div>
                     </div>
                     <div>
-                        <label class="block text-sm font-medium mb-3">备注留言</label>
+                        <label class="block text-sm font-medium mb-2">备注留言</label>
                         <textarea name="remark" rows="3"
-                                  class="w-full px-5 py-4 rounded-xl border-2 border-gray-200 focus:ring-2 focus:ring-orange-400 focus:border-orange-400 outline-none transition-all resize-none"
+                                  class="w-full px-5 py-3.5 rounded-xl border-2 border-gray-200 focus:border-orange-400 focus:ring-0 outline-none transition-colors resize-none"
                                   placeholder="有什么想了解的，请留言"></textarea>
                     </div>
                     <button type="submit" 
-                            class="w-full btn-primary py-5 rounded-xl font-bold text-lg hover:shadow-xl transition-all">
+                            class="w-full btn-primary py-4 rounded-xl font-medium text-lg transition-all hover:shadow-lg">
                         提交预约
                     </button>
                 </form>
                 <div id="successMessage" class="hidden text-center py-12">
-                    <div class="text-7xl mb-6">🎉</div>
-                    <h3 class="text-3xl font-bold text-green-600 mb-3">预约成功！</h3>
-                    <p class="text-gray-600 text-lg">我们将在24小时内与您联系</p>
+                    <h3 class="text-2xl font-bold text-green-600 mb-3">预约成功！</h3>
+                    <p class="text-gray-600">我们将在24小时内与您联系</p>
                 </div>
             </div>
         </div>
@@ -315,42 +283,41 @@
 
     <!-- 联系我们 -->
     <section id="contact" class="py-20 bg-gray-900 text-white">
-        <div class="max-w-6xl mx-auto px-6">
-            <div class="grid md:grid-cols-3 gap-12">
+        <div class="max-w-7xl mx-auto px-6 lg:px-12">
+            <div class="grid md:grid-cols-3 gap-12 lg:gap-16">
                 <div>
                     <div class="flex items-center gap-3 mb-6">
-                        <div class="w-12 h-12 rounded-full bg-gradient-to-br from-orange-400 to-orange-600 flex items-center justify-center shadow-md">
-                            <span class="text-2xl"></span>
+                        <div class="w-10 h-10 rounded-full bg-gradient-to-br from-orange-400 to-orange-600 flex items-center justify-center">
+                            <span class="text-white font-bold">G</span>
                         </div>
-                        <span class="text-xl font-bold">芜湖长颈鹿成长中心</span>
+                        <span class="text-lg font-bold">芜湖长颈鹿成长中心</span>
                     </div>
                     <p class="text-gray-400 leading-relaxed">
                         用专业和热爱<br>点亮孩子的成长之路
                     </p>
                 </div>
                 <div>
-                    <h4 class="font-bold mb-6 text-lg">联系方式</h4>
+                    <h4 class="font-bold mb-6">联系方式</h4>
                     <div class="space-y-4 text-gray-400">
-                        <p> 芜湖市弋江区新时代商业街19#221 223</p>
-                        <p> 0553-2866832</p>
-                        <p> 19315393167（微信同号）</p>
+                        <p>芜湖市弋江区新时代商业街19#221 223</p>
+                        <p>0553-2866832</p>
+                        <p>19315393167（微信同号）</p>
                     </div>
                 </div>
                 <div>
-                    <h4 class="font-bold mb-6 text-lg">关注我们</h4>
+                    <h4 class="font-bold mb-6">关注我们</h4>
                     <div class="flex gap-4">
-                        <a href="#" class="w-12 h-12 rounded-full bg-gray-800 flex items-center justify-center hover:bg-gray-700 transition-colors text-2xl">
-                            
+                        <a href="#" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-gray-700 transition-colors">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M8.29 20.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0022 5.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.072 4.072 0 012.8 9.713v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 012 18.407a11.616 11.616 0 006.29 1.84"/></svg>
                         </a>
-                        <a href="#" class="w-12 h-12 rounded-full bg-gray-800 flex items-center justify-center hover:bg-gray-700 transition-colors text-2xl">
-                            
+                        <a href="#" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-gray-700 transition-colors">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C6.477 2 2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.879V14.89h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.989C18.343 21.129 22 16.99 22 12c0-5.523-4.477-10-10-10z"/></svg>
                         </a>
                     </div>
-                    <p class="text-gray-500 text-sm mt-4">欢迎咨询课程详情</p>
                 </div>
             </div>
             <div class="border-t border-gray-800 mt-12 pt-8 text-center text-gray-500 text-sm">
-                © 2024 芜湖长颈鹿成长中心 版权所有
+                2024 芜湖长颈鹿成长中心 版权所有
             </div>
         </div>
     </section>
