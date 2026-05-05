@@ -194,16 +194,18 @@
         .hero {
             min-height: 100dvh;
             display: grid;
-            grid-template-columns: 1fr 1fr;
+            grid-template-columns: 1.5fr 1fr;
             padding-top: 72px;
+            gap: 40px;
+            padding-left: clamp(40px, 6vw, 100px);
+            padding-right: clamp(40px, 6vw, 100px);
+            align-items: center;
         }
 
         .hero-content {
             display: flex;
             flex-direction: column;
             justify-content: center;
-            padding: clamp(48px, 8vw, 120px) clamp(32px, 6vw, 96px);
-            padding-right: clamp(48px, 6vw, 80px);
         }
 
         .hero-eyebrow {
@@ -313,11 +315,21 @@
 
         .hero-image {
             position: relative;
-            overflow: hidden;
-            background: var(--bg-secondary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
 
-        .hero-image img {
+        .hero-image-card {
+            width: 100%;
+            aspect-ratio: 4 / 5;
+            border-radius: 24px;
+            overflow: hidden;
+            box-shadow: var(--shadow-lg);
+            position: relative;
+        }
+
+        .hero-image-card img {
             width: 100%;
             height: 100%;
             object-fit: cover;
@@ -325,16 +337,12 @@
             animation: heroImageReveal 1.2s var(--ease-out) 0.3s forwards;
         }
 
-        @keyframes heroImageReveal {
-            to { transform: scale(1); }
-        }
-
-        /* Stats Bar */
         .stats-bar {
             position: absolute;
-            bottom: 40px;
-            left: 40px;
-            right: 40px;
+            bottom: -20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 90%;
             display: grid;
             grid-template-columns: repeat(3, 1fr);
             gap: 1px;
@@ -343,8 +351,11 @@
             overflow: hidden;
             box-shadow: var(--shadow-lg);
             opacity: 0;
-            transform: translateY(24px);
             animation: fadeUp 0.8s var(--ease-out) 0.9s forwards;
+        }
+
+        @keyframes heroImageReveal {
+            to { transform: scale(1); }
         }
 
         .stat-item {
@@ -916,22 +927,29 @@
         @media (max-width: 1024px) {
             .hero {
                 grid-template-columns: 1fr;
-                grid-template-rows: auto 50vh;
-            }
-
-            .hero-image {
-                order: -1;
+                gap: 32px;
+                padding-left: clamp(24px, 5vw, 48px);
+                padding-right: clamp(24px, 5vw, 48px);
+                padding-top: 100px;
+                padding-bottom: 60px;
             }
 
             .hero-content {
-                padding: 80px clamp(24px, 5vw, 48px) 48px;
-                padding-right: clamp(24px, 5vw, 48px);
+                text-align: center;
+                align-items: center;
+            }
+
+            .hero-image {
+                max-width: 400px;
+                margin: 0 auto;
+            }
+
+            .hero-image-card {
+                aspect-ratio: 4 / 3;
             }
 
             .stats-bar {
-                bottom: 24px;
-                left: 24px;
-                right: 24px;
+                bottom: -16px;
             }
 
             .courses-grid {
@@ -971,20 +989,31 @@
                 gap: 0;
             }
 
+            .hero {
+                padding-top: 88px;
+                padding-bottom: 80px;
+                gap: 24px;
+            }
+
             .hero-title {
-                font-size: clamp(36px, 8vw, 52px);
+                font-size: clamp(32px, 8vw, 48px);
+            }
+
+            .hero-image-card {
+                aspect-ratio: 1 / 1;
             }
 
             .stats-bar {
-                grid-template-columns: repeat(3, 1fr);
+                bottom: -12px;
+                width: 94%;
             }
 
             .stat-item {
-                padding: 20px 12px;
+                padding: 16px 8px;
             }
 
             .stat-number {
-                font-size: 24px;
+                font-size: 22px;
             }
 
             .stat-label {
@@ -1101,7 +1130,9 @@
             </div>
         </div>
         <div class="hero-image">
-            <img src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=1200&h=1600&fit=crop&q=85" alt="孩子们在学习">
+            <div class="hero-image-card">
+                <img src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=900&h=1125&fit=crop&q=85" alt="孩子们在学习">
+            </div>
             <div class="stats-bar">
                 <div class="stat-item">
                     <div class="stat-number">300+</div>
