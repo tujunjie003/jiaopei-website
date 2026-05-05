@@ -228,15 +228,24 @@
         }
 
         .hero-subtitle {
-            font-size: clamp(31px, 1.4vw, 33px);
+            font-size: clamp(17px, 1.5vw, 20px);
             font-weight: 300;
             color: var(--text-secondary);
-            line-height: 1.75;
-            margin-bottom: 44px;
-            max-width: 46ch;
+            line-height: 1.65;
+            margin-bottom: 48px;
+            max-width: 42ch;
             opacity: 0;
             transform: translateY(20px);
             animation: heroReveal 0.7s cubic-bezier(0.16, 1, 0.3, 1) 0.45s forwards;
+        }
+
+        .hero-subtitle .sub-line {
+            display: block;
+            color: var(--accent);
+            font-weight: 400;
+            margin-top: 6px;
+            font-size: clamp(15px, 1.3vw, 18px);
+            letter-spacing: 0.01em;
         }
 
         .hero-actions {
@@ -1113,7 +1122,7 @@
         <div class="hero-content">
             <div class="hero-eyebrow">Wuhu Giraffe Growth Center</div>
             <h1 class="hero-title">让每个孩子<br><span class="hero-title-sub">用长颈鹿的视角看世界</span></h1>
-            <p class="hero-subtitle">专注 3-12 岁幼少儿英语数学培优<br>用专业和热爱，点亮孩子的成长之路</p>
+            <p class="hero-subtitle">3-12岁英语数学高视野培优<span class="sub-line">让孩子踮起脚尖，看见更大的世界</span></p>
             <div class="hero-actions">
                 <a href="#booking" class="btn-primary">免费预约试课</a>
                 <a href="#courses" class="btn-ghost">了解课程</a>
