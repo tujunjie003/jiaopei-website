@@ -339,12 +339,11 @@
 
         .stats-bar {
             position: absolute;
-            bottom: -20px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 90%;
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
+            top: 50%;
+            left: -24px;
+            transform: translateY(-50%);
+            display: flex;
+            flex-direction: column;
             gap: 1px;
             background: var(--border);
             border-radius: 20px;
@@ -361,8 +360,9 @@
         .stat-item {
             background: rgba(255, 255, 255, 0.96);
             backdrop-filter: blur(20px);
-            padding: 28px 24px;
+            padding: 20px 28px;
             text-align: center;
+            min-width: 100px;
         }
 
         .stat-number {
@@ -942,6 +942,7 @@
             .hero-image {
                 max-width: 400px;
                 margin: 0 auto;
+                padding-left: 0;
             }
 
             .hero-image-card {
@@ -949,7 +950,11 @@
             }
 
             .stats-bar {
+                top: auto;
                 bottom: -16px;
+                left: 50%;
+                transform: translateX(-50%);
+                flex-direction: row;
             }
 
             .courses-grid {
@@ -1004,7 +1009,11 @@
             }
 
             .stats-bar {
+                top: auto;
                 bottom: -12px;
+                left: 50%;
+                transform: translateX(-50%);
+                flex-direction: row;
                 width: 94%;
             }
 
