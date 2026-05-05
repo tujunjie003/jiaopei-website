@@ -152,6 +152,13 @@
             width: 100%;
         }
 
+        .nav-end {
+            display: flex;
+            align-items: center;
+            gap: 32px;
+            margin-left: auto;
+        }
+
         .nav-cta {
             display: inline-flex;
             align-items: center;
@@ -951,12 +958,17 @@
         }
 
         @media (max-width: 768px) {
-            .nav-links {
+            .nav-links,
+            .nav-cta {
                 display: none;
             }
 
             .mobile-toggle {
                 display: flex;
+            }
+
+            .nav-end {
+                gap: 0;
             }
 
             .hero-title {
@@ -1058,21 +1070,23 @@
             <div class="nav-logo-mark">G</div>
             <span class="nav-logo-text">芜湖长颈鹿成长中心</span>
         </a>
-        <ul class="nav-links">
-            <li><a href="#home">首页</a></li>
-            <li><a href="#courses">课程</a></li>
-            <li><a href="#about">关于</a></li>
-            <li><a href="#contact">联系</a></li>
-        </ul>
-        <a href="#booking" class="nav-cta">
-            预约体验
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M5 12h14M12 5l7 7-7 7"/>
-            </svg>
-        </a>
-        <button class="mobile-toggle" aria-label="菜单">
-            <span></span><span></span><span></span>
-        </button>
+        <div class="nav-end">
+            <ul class="nav-links">
+                <li><a href="#home">首页</a></li>
+                <li><a href="#courses">课程</a></li>
+                <li><a href="#about">关于</a></li>
+                <li><a href="#contact">联系</a></li>
+            </ul>
+            <a href="#booking" class="nav-cta">
+                预约体验
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M5 12h14M12 5l7 7-7 7"/>
+                </svg>
+            </a>
+            <button class="mobile-toggle" aria-label="菜单">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
     </nav>
 
     <!-- Hero -->
