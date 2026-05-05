@@ -439,46 +439,64 @@
 
         /* Courses Section */
         .courses-section {
-            background: var(--bg-secondary);
+            background: var(--bg-primary);
             min-height: calc(100dvh - 72px);
-            padding-top: 20px;
+            padding: clamp(28px, 4vw, 48px) clamp(32px, 6vw, 96px);
             scroll-snap-align: start;
-            padding-left: clamp(24px, 5vw, 80px);
-            padding-right: clamp(24px, 5vw, 80px);
+            display: grid;
+            grid-template-columns: 28fr 72fr;
+            gap: 48px;
+            align-items: center;
+        }
+
+        .courses-header {
             display: flex;
             flex-direction: column;
-            justify-content: flex-start;
+            gap: 20px;
+        }
+
+        .courses-title {
+            font-family: 'Oswald', sans-serif;
+            font-size: clamp(32px, 3.5vw, 52px);
+            font-weight: 600;
+            color: var(--text-primary);
+            letter-spacing: -0.02em;
+            line-height: 1.1;
+        }
+
+        .courses-desc {
+            font-size: clamp(14px, 1.2vw, 17px);
+            font-weight: 300;
+            color: var(--text-secondary);
+            line-height: 1.65;
         }
 
         .courses-grid {
             display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 120px;
-            max-width: 1200px;
-            margin: 0 auto;
+            grid-template-columns: 1fr 1fr;
+            gap: 24px;
+            height: 100%;
+            align-content: center;
         }
 
         .course-card {
             background: var(--bg-card);
-            border-radius: 24px;
+            border-radius: 20px;
             overflow: hidden;
-            box-shadow: var(--shadow-md);
-            transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
-            position: relative;
+            box-shadow: 0 2px 12px rgba(26,24,20,0.06), 0 8px 32px rgba(26,24,20,0.06);
+            transition: all 0.45s cubic-bezier(0.16, 1, 0.3, 1);
+            display: flex;
+            flex-direction: column;
         }
 
         .course-card:hover {
-            transform: translateY(-8px);
-            box-shadow: var(--shadow-lg);
-        }
-
-        .course-card--math {
-            margin-top: 0;
+            transform: translateY(-6px);
+            box-shadow: 0 8px 32px rgba(26,24,20,0.1), 0 20px 60px rgba(26,24,20,0.1);
         }
 
         .course-image {
             position: relative;
-            aspect-ratio: 16 / 10;
+            aspect-ratio: 16 / 9;
             overflow: hidden;
         }
 
@@ -486,83 +504,75 @@
             width: 100%;
             height: 100%;
             object-fit: cover;
-            transition: transform 0.7s var(--ease-out);
+            transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
         }
 
         .course-card:hover .course-image img {
-            transform: scale(1.05);
+            transform: scale(1.04);
         }
 
         .course-tag {
             position: absolute;
-            top: 20px;
-            left: 20px;
-            padding: 8px 16px;
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(10px);
+            top: 14px;
+            left: 14px;
+            padding: 6px 12px;
+            background: rgba(255, 255, 255, 0.92);
+            backdrop-filter: blur(8px);
             border-radius: 100px;
-            font-size: 12px;
+            font-size: 11px;
             font-weight: 500;
             letter-spacing: 0.02em;
         }
 
-        .course-tag--orange {
-            color: var(--accent);
-        }
-
-        .course-tag--blue {
-            color: #3B82F6;
-        }
+        .course-tag--orange { color: var(--accent); }
+        .course-tag--blue { color: #3B82F6; }
 
         .course-body {
-            padding: 36px 40px 40px;
+            padding: 20px 22px 22px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            flex: 1;
         }
 
         .course-title {
-            font-size: 26px;
+            font-family: 'Oswald', sans-serif;
+            font-size: clamp(18px, 1.5vw, 22px);
             font-weight: 600;
-            color: var(--text-primary);
-            margin-bottom: 14px;
             letter-spacing: -0.01em;
         }
 
-        .course-card--english .course-title {
-            color: var(--accent);
-        }
-
-        .course-card--math .course-title {
-            color: #3B82F6;
-        }
+        .course-card--english .course-title { color: var(--accent); }
+        .course-card--math .course-title { color: #3B82F6; }
 
         .course-desc {
-            font-size: 14px;
+            font-size: clamp(12px, 1vw, 14px);
             font-weight: 300;
             color: var(--text-secondary);
-            line-height: 1.8;
-            margin-bottom: 24px;
+            line-height: 1.7;
         }
 
         .course-tags {
             display: flex;
             flex-wrap: wrap;
-            gap: 8px;
-            margin-bottom: 32px;
+            gap: 6px;
+            margin-top: auto;
         }
 
         .course-tag-pill {
-            padding: 6px 14px;
+            padding: 4px 10px;
             background: var(--bg-secondary);
             border-radius: 100px;
-            font-size: 12px;
+            font-size: 11px;
             font-weight: 400;
-            color: var(--text-secondary);
+            color: var(--text-muted);
         }
 
         .course-link {
             display: inline-flex;
             align-items: center;
-            gap: 8px;
-            font-size: 13px;
+            gap: 6px;
+            font-size: 12px;
             font-weight: 500;
             text-decoration: none;
             letter-spacing: 0.02em;
@@ -571,29 +581,11 @@
             transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
         }
 
-        .course-link--orange {
-            color: var(--accent);
-        }
-
-        .course-link--orange:hover {
-            color: var(--accent-deep);
-            border-color: var(--accent-deep);
-            gap: 12px;
-        }
-
-        .course-link--blue {
-            color: #3B82F6;
-        }
-
-        .course-link--blue:hover {
-            color: #2563EB;
-            border-color: #2563EB;
-            gap: 12px;
-        }
-
-        .course-link:hover {
-            gap: 12px;
-        }
+        .course-link--orange { color: var(--accent); }
+        .course-link--blue { color: #3B82F6; }
+        .course-link:hover { gap: 10px; }
+        .course-link--orange:hover { color: var(--accent-deep); border-color: var(--accent-deep); }
+        .course-link--blue:hover { color: #2563EB; border-color: #2563EB; }
 
         /* About Section */
         .about-section {
@@ -1197,10 +1189,9 @@
 
     <!-- Courses -->
     <section id="courses" class="courses-section">
-        <div class="section-header">
-            
-            <h2 class="section-title">伸长脖子的课</h2>
-            <p class="section-desc">伸长脖子，不是为了和别人看齐，而是找到自己看见世界的高度</p>
+        <div class="courses-header">
+            <h2 class="courses-title">伸长脖子的课</h2>
+            <p class="courses-desc">伸长脖子，不是为了和别人看齐，而是找到自己看见世界的高度</p>
         </div>
         <div class="courses-grid">
             <!-- English Course -->
