@@ -43,6 +43,15 @@
             background: var(--bg-primary);
             color: var(--text-primary);
             line-height: 1.7;
+            overflow-x: hidden;
+            scroll-snap-type: y mandatory;
+            overscroll-behavior-y: contain;
+        }
+
+        section {
+            scroll-snap-align: start;
+            scroll-snap-stop: always;
+        }
             -webkit-font-smoothing: antialiased;
             -moz-osx-font-smoothing: grayscale;
             overflow-x: hidden;
@@ -427,6 +436,8 @@
         /* Courses Section */
         .courses-section {
             background: var(--bg-secondary);
+            min-height: 100dvh;
+            scroll-snap-align: start;
         }
 
         .courses-grid {
@@ -548,6 +559,8 @@
         /* About Section */
         .about-section {
             background: var(--bg-primary);
+            min-height: 100dvh;
+            scroll-snap-align: start;
         }
 
         .about-grid {
@@ -637,6 +650,8 @@
         /* Booking Section */
         .booking-section {
             background: var(--bg-secondary);
+            min-height: 100dvh;
+            scroll-snap-align: start;
         }
 
         .booking-wrapper {
