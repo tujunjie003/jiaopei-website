@@ -191,9 +191,9 @@
         .hero {
             display: flex;
             flex-direction: row;
-            align-items: stretch;
+            align-items: center;
             justify-content: space-between;
-            height: calc(100dvh - 72px);
+            height: 100dvh;
             padding-top: 72px;
             padding-left: clamp(56px, 8vw, 140px);
             padding-right: clamp(56px, 8vw, 140px);
@@ -449,10 +449,10 @@
         /* Courses Section */
         .courses-section {
             background: var(--bg-primary);
-            height: calc(100dvh - 72px);
+            height: 100dvh;
             display: flex;
             flex-direction: row;
-            align-items: stretch;
+            align-items: center;
             justify-content: space-between;
             padding-top: 72px;
             padding-left: clamp(56px, 8vw, 140px);
@@ -464,11 +464,11 @@
             display: flex;
             flex-direction: column;
             justify-content: center;
-            height: 100%;
-            align-self: center;
+            flex: 0 0 35%;
         }
 
         .courses-grid {
+            flex: 0 0 65%;
             margin: auto 0;
         }
 
@@ -606,25 +606,24 @@
         /* About Section */
         .about-section {
             background: var(--a-bg);
-            height: calc(100dvh - 72px);
+            height: 100dvh;
             display: flex;
             flex-direction: row;
-            align-items: stretch;
+            align-items: center;
             justify-content: space-between;
             position: relative;
             overflow: hidden;
             padding-top: 72px;
-            gap: 0;
+            padding-left: clamp(56px, 8vw, 140px);
+            padding-right: clamp(56px, 8vw, 140px);
+            gap: 48px;
         }
         .about-left {
             display: flex;
             flex-direction: column;
             justify-content: center;
-            padding-left: clamp(40px, 5vw, 80px);
-            padding-right: clamp(40px, 5vw, 80px);
-            height: 100%;
-            margin: auto 0;
-            flex: 1;
+            flex: 0 0 35%;
+        }
         }
 
         .about-eyebrow {
@@ -851,10 +850,10 @@
         @media (max-width: 768px) {
             .about-section {
             background: var(--a-bg);
-            height: calc(100dvh - 72px);
+            height: 100dvh;
             display: flex;
             flex-direction: row;
-            align-items: stretch;
+            align-items: center;
             justify-content: space-between;
             position: relative;
             overflow: hidden;
@@ -887,24 +886,24 @@
         /* Booking Section */
         .booking-section {
             background: var(--a-bg);
-            height: calc(100dvh - 72px);
+            height: 100dvh;
             display: flex;
             flex-direction: row;
-            align-items: stretch;
+            align-items: center;
             justify-content: space-between;
             padding-top: 72px;
-            gap: 0;
+            gap: 48px;
             scroll-snap-align: start;
         }
         .booking-left {
             display: flex;
             flex-direction: column;
             justify-content: center;
+            flex: 0 0 35%;
             padding: clamp(60px, 8vw, 120px) clamp(40px, 5vw, 80px);
             height: 100%;
             position: sticky;
             top: 0;
-            height: 100dvh;
         }
 
         .booking-left-eyebrow {
@@ -1001,11 +1000,11 @@
             display: flex;
             flex-direction: column;
             justify-content: center;
+            flex: 0 0 65%;
             padding: clamp(60px, 8vw, 120px) clamp(40px, 5vw, 80px);
             height: 100%;
             position: sticky;
             top: 0;
-            height: 100dvh;
         }
 
         .booking-card {
@@ -1210,10 +1209,10 @@
         @media (max-width: 900px) {
             .booking-section {
             background: var(--a-bg);
-            height: calc(100dvh - 72px);
+            height: 100dvh;
             display: flex;
             flex-direction: row;
-            align-items: stretch;
+            align-items: center;
             justify-content: space-between;
             padding-top: 72px;
             gap: 0;
@@ -1373,10 +1372,10 @@
         /* Responsive */
         @media (max-width: 1024px) {
             .hero {
-            height: calc(100dvh - 72px);
+            height: 100dvh;
             display: flex;
             flex-direction: row;
-            align-items: stretch;
+            align-items: center;
             justify-content: space-between;
             padding-top: 72px;
             padding-left: clamp(56px, 8vw, 140px);
@@ -1437,10 +1436,10 @@
             }
 
             .hero {
-            height: calc(100dvh - 72px);
+            height: 100dvh;
             display: flex;
             flex-direction: row;
-            align-items: stretch;
+            align-items: center;
             justify-content: space-between;
             padding-top: 72px;
             padding-left: clamp(56px, 8vw, 140px);
