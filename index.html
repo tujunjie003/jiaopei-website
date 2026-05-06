@@ -190,15 +190,14 @@
         /* Hero Section */
         .hero {
             height: calc(100dvh - 72px);
-            overflow: hidden;
-            display: grid;
-            grid-template-columns: 55fr 45fr;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-between;
             padding-top: 72px;
             padding-left: clamp(56px, 8vw, 140px);
             padding-right: clamp(56px, 8vw, 140px);
-            align-items: stretch;
-            gap: 0;
-            overflow: hidden;
+            gap: 48px;
         }
 
         .hero-content {
@@ -447,18 +446,16 @@
         .courses-section {
             background: var(--bg-primary);
             height: calc(100dvh - 72px);
-            overflow: hidden;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-between;
             padding-top: 72px;
             padding-left: clamp(56px, 8vw, 140px);
             padding-right: clamp(56px, 8vw, 140px);
-            padding-bottom: clamp(28px, 4vw, 48px);
-            scroll-snap-align: start;
-            display: grid;
-            grid-template-columns: 28fr 72fr;
             gap: 48px;
-            align-items: stretch;
+            scroll-snap-align: start;
         }
-
         .courses-header {
             display: flex;
             flex-direction: column;
@@ -604,18 +601,17 @@
 
         /* About Section */
         .about-section {
-            background: var(--bg-primary);
+            background: var(--a-bg);
             height: calc(100dvh - 72px);
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 0;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-between;
             position: relative;
             overflow: hidden;
             padding-top: 72px;
-            padding-bottom: clamp(28px, 4vw, 48px);
-            align-items: center;
+            gap: 0;
         }
-
         .about-left {
             display: flex;
             flex-direction: column;
@@ -850,8 +846,17 @@
 
         @media (max-width: 768px) {
             .about-section {
-                grid-template-columns: 1fr;
-            }
+            background: var(--a-bg);
+            height: calc(100dvh - 72px);
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-between;
+            position: relative;
+            overflow: hidden;
+            padding-top: 72px;
+            gap: 0;
+        }
             .about-left {
                 position: relative;
                 height: auto;
@@ -879,16 +884,14 @@
         .booking-section {
             background: var(--a-bg);
             height: calc(100dvh - 72px);
-            overflow: hidden;
-            padding-top: 72px;
-            padding-bottom: clamp(28px, 4vw, 48px);
-            scroll-snap-align: start;
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 0;
+            display: flex;
+            flex-direction: row;
             align-items: center;
+            justify-content: space-between;
+            padding-top: 72px;
+            gap: 0;
+            scroll-snap-align: start;
         }
-
         .booking-left {
             display: flex;
             flex-direction: column;
@@ -1200,8 +1203,16 @@
 
         @media (max-width: 900px) {
             .booking-section {
-                grid-template-columns: 1fr;
-            }
+            background: var(--a-bg);
+            height: calc(100dvh - 72px);
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-between;
+            padding-top: 72px;
+            gap: 0;
+            scroll-snap-align: start;
+        }
             .booking-left {
                 position: relative;
                 height: auto;
@@ -1356,10 +1367,15 @@
         /* Responsive */
         @media (max-width: 1024px) {
             .hero {
-                grid-template-columns: 1fr;
-                padding: 96px clamp(24px, 5vw, 48px) 80px;
-            }
-
+            height: calc(100dvh - 72px);
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-between;
+            padding-top: 72px;
+            padding-left: clamp(56px, 8vw, 140px);
+            padding-right: clamp(56px, 8vw, 140px);
+            gap: 48px;
             .hero-content {
                 text-align: center;
                 align-items: center;
@@ -1415,10 +1431,15 @@
             }
 
             .hero {
-                padding: 88px 24px 72px;
-                min-height: unset;
-            }
-
+            height: calc(100dvh - 72px);
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-between;
+            padding-top: 72px;
+            padding-left: clamp(56px, 8vw, 140px);
+            padding-right: clamp(56px, 8vw, 140px);
+            gap: 48px;
             .hero-title {
                 font-size: clamp(34px, 9vw, 52px);
             }
