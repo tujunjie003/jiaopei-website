@@ -195,7 +195,7 @@
             padding-top: 72px;
             padding-left: clamp(56px, 8vw, 140px);
             padding-right: clamp(56px, 8vw, 140px);
-            align-items: center;
+            align-items: stretch;
             gap: 0;
             overflow: hidden;
         }
@@ -205,6 +205,11 @@
             flex-direction: column;
             justify-content: center;
             padding-right: 40px;
+            margin: auto 0;
+        }
+
+        .hero-image {
+            margin: auto 0;
         }
 
         .hero-eyebrow {
@@ -449,13 +454,18 @@
             display: grid;
             grid-template-columns: 28fr 72fr;
             gap: 48px;
-            align-items: center;
+            align-items: stretch;
         }
 
         .courses-header {
             display: flex;
             flex-direction: column;
-            gap: 20px;
+            justify-content: center;
+            margin: auto 0;
+        }
+
+        .courses-grid {
+            margin: auto 0;
         }
 
         .courses-title {
@@ -610,6 +620,7 @@
             justify-content: center;
             padding-left: clamp(40px, 5vw, 80px);
             padding-right: clamp(40px, 5vw, 80px);
+            margin: auto 0;
         }
 
         .about-eyebrow {
@@ -693,6 +704,7 @@
             position: sticky;
             top: 0;
             height: 100dvh;
+            margin: auto 0;
         }
 
         .about-features {
