@@ -242,7 +242,7 @@
         }
 
         .hero-title-sub {
-            font-size: clamp(38px, 4vw, 64px);
+            font-size: clamp(42px, 4.5vw, 72px);
             color: var(--accent);
             display: block;
             line-height: 1.12;
@@ -474,20 +474,19 @@
 
         .courses-title {
             font-family: 'Playfair Display', 'Noto Serif SC', Georgia, serif;
-            font-size: clamp(38px, 4vw, 64px);
+            font-size: clamp(42px, 4.5vw, 72px);
             font-weight: 600;
             color: var(--text-primary);
             letter-spacing: -0.03em;
             line-height: 1.08;
-            margin-bottom: 36px;
         }
 
         .courses-desc {
             font-size: clamp(18px, 1.4vw, 22px);
             font-weight: 300;
             color: var(--text-muted);
-            color: var(--text-secondary);
-            line-height: 1.65;
+            line-height: 1.85;
+            max-width: 42ch;
         }
 
         .courses-grid {
@@ -677,6 +676,7 @@
 
         .about-meta {
             margin-top: 48px;
+            margin-bottom: 48px;
             display: grid;
             grid-template-columns: repeat(3, 1fr);
             gap: 20px;
