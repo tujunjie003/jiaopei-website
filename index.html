@@ -862,54 +862,187 @@
 
         /* Booking Section */
         .booking-section {
-            background: var(--bg-secondary);
-            min-height: calc(100dvh - 72px);
+            background: var(--a-bg);
+            min-height: 100dvh;
+            padding-top: 72px;
+            padding-bottom: clamp(28px, 4vw, 48px);
             scroll-snap-align: start;
-        }
-
-        .booking-wrapper {
-            max-width: 720px;
-            margin: 0 auto;
-        }
-
-        .booking-form {
-            background: var(--bg-card);
-            border-radius: 24px;
-            padding: clamp(40px, 5vw, 64px);
-            box-shadow: var(--shadow-md);
-        }
-
-        .form-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 20px;
+            gap: 0;
+            align-items: center;
         }
 
-        .form-group {
+        .booking-left {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: clamp(60px, 8vw, 120px) clamp(40px, 5vw, 80px);
+            position: sticky;
+            top: 0;
+            height: 100dvh;
+        }
+
+        .booking-left-eyebrow {
+            font-family: 'Oswald', sans-serif;
+            font-size: 11px;
+            font-weight: 500;
+            letter-spacing: 0.18em;
+            text-transform: uppercase;
+            color: var(--accent);
+            margin-bottom: 28px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            opacity: 0;
+            transform: translateY(12px);
+            transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .booking-left-eyebrow::before {
+            content: '';
+            width: 32px;
+            height: 1px;
+            background: var(--accent);
+        }
+
+        .booking-left-title {
+            font-family: 'Playfair Display', 'Noto Serif SC', Georgia, serif;
+            font-size: clamp(42px, 4.5vw, 72px);
+            font-weight: 600;
+            line-height: 1.08;
+            color: var(--text-primary);
+            letter-spacing: -0.03em;
+            margin-bottom: 28px;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.7s cubic-bezier(0.16, 1, 0.3, 1) 0.1s;
+        }
+
+        .booking-left-desc {
+            font-size: clamp(15px, 1.2vw, 17px);
+            font-weight: 300;
+            color: var(--text-muted);
+            line-height: 1.85;
+            max-width: 38ch;
+            margin-bottom: 48px;
+            opacity: 0;
+            transform: translateY(16px);
+            transition: all 0.7s cubic-bezier(0.16, 1, 0.3, 1) 0.2s;
+        }
+
+        .booking-contact-list {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            opacity: 0;
+            transform: translateY(12px);
+            transition: all 0.7s cubic-bezier(0.16, 1, 0.3, 1) 0.3s;
+        }
+
+        .booking-contact-item {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .booking-contact-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 10px;
+            background: var(--accent-light);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 16px;
+            flex-shrink: 0;
+        }
+
+        .booking-contact-label {
+            font-size: 11px;
+            font-weight: 400;
+            color: var(--text-muted);
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+            margin-bottom: 2px;
+        }
+
+        .booking-contact-value {
+            font-size: 14px;
+            font-weight: 500;
+            color: var(--text-primary);
+        }
+
+        .booking-right {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: clamp(60px, 8vw, 120px) clamp(40px, 5vw, 80px);
+            position: sticky;
+            top: 0;
+            height: 100dvh;
+        }
+
+        .booking-card {
+            background: white;
+            border-radius: 24px;
+            padding: clamp(40px, 4vw, 56px);
+            box-shadow: 0 4px 32px rgba(26,18,8,0.08), 0 16px 64px rgba(26,18,8,0.06);
+            opacity: 0;
+            transform: translateY(24px);
+            transition: all 0.7s cubic-bezier(0.16, 1, 0.3, 1) 0.15s;
+        }
+
+        .booking-card-title {
+            font-family: 'Oswald', sans-serif;
+            font-size: clamp(20px, 1.5vw, 26px);
+            font-weight: 500;
+            color: var(--text-primary);
+            letter-spacing: -0.01em;
+            margin-bottom: 8px;
+        }
+
+        .booking-card-sub {
+            font-size: 13px;
+            font-weight: 300;
+            color: var(--text-muted);
+            margin-bottom: 36px;
+            line-height: 1.6;
+        }
+
+        .booking-form-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+        }
+
+        .booking-form-group {
             display: flex;
             flex-direction: column;
             gap: 8px;
         }
 
-        .form-group.full {
+        .booking-form-group.full {
             grid-column: 1 / -1;
         }
 
-        .form-label {
-            font-size: 13px;
+        .booking-form-label {
+            font-family: 'Oswald', sans-serif;
+            font-size: 11px;
             font-weight: 500;
-            color: var(--text-primary);
-            letter-spacing: 0.01em;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: var(--text-muted);
         }
 
-        .form-label .required {
+        .booking-form-label span {
             color: var(--accent);
             margin-left: 2px;
         }
 
-        .form-input,
-        .form-select,
-        .form-textarea {
+        .booking-form-input,
+        .booking-form-select,
+        .booking-form-textarea {
             width: 100%;
             padding: 14px 18px;
             background: var(--bg-primary);
@@ -919,95 +1052,153 @@
             font-size: 14px;
             font-weight: 400;
             color: var(--text-primary);
-            transition: all 0.3s var(--ease-out);
+            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
             outline: none;
             -webkit-appearance: none;
         }
 
-        .form-input:focus,
-        .form-select:focus,
-        .form-textarea:focus {
+        .booking-form-input:focus,
+        .booking-form-select:focus,
+        .booking-form-textarea:focus {
             border-color: var(--accent);
-            background: var(--bg-card);
-            box-shadow: 0 0 0 4px rgba(196, 149, 106, 0.12);
+            background: white;
+            box-shadow: 0 0 0 4px rgba(232,122,61,0.08);
+            transform: translateY(-1px);
         }
 
-        .form-input::placeholder,
-        .form-textarea::placeholder {
+        .booking-form-input::placeholder,
+        .booking-form-textarea::placeholder {
             color: var(--text-muted);
+            font-weight: 300;
         }
 
-        .form-checkbox-group {
+        .booking-form-select {
+            cursor: pointer;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%239C8872' d='M6 8L1 3h10z'/%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: right 16px center;
+            padding-right: 40px;
+        }
+
+        .booking-course-group {
             display: flex;
-            gap: 24px;
+            gap: 12px;
             flex-wrap: wrap;
         }
 
-        .form-checkbox-label {
+        .booking-course-label {
             display: flex;
             align-items: center;
-            gap: 10px;
+            gap: 8px;
             cursor: pointer;
-            font-size: 14px;
+            padding: 10px 20px;
+            border-radius: 100px;
+            border: 1.5px solid var(--border);
+            background: var(--bg-primary);
+            font-size: 13px;
+            font-weight: 400;
             color: var(--text-secondary);
-            transition: color 0.2s;
+            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+            user-select: none;
         }
 
-        .form-checkbox-label:hover {
+        .booking-course-label:hover {
+            border-color: var(--accent-light);
             color: var(--text-primary);
         }
 
-        .form-checkbox {
-            width: 18px;
-            height: 18px;
-            border: 1.5px solid var(--border);
-            border-radius: 5px;
+        .booking-course-radio {
             appearance: none;
             -webkit-appearance: none;
+            width: 16px;
+            height: 16px;
+            border: 1.5px solid var(--border);
+            border-radius: 50%;
             cursor: pointer;
-            position: relative;
             transition: all 0.2s;
-            background: var(--bg-primary);
+            position: relative;
+            flex-shrink: 0;
         }
 
-        .form-checkbox:checked {
-            background: var(--accent);
+        .booking-course-radio:checked {
             border-color: var(--accent);
+            background: var(--accent);
         }
 
-        .form-checkbox:checked::after {
+        .booking-course-radio:checked::after {
             content: '';
             position: absolute;
-            top: 2px;
-            left: 5px;
-            width: 5px;
-            height: 9px;
-            border: 2px solid white;
-            border-top: none;
-            border-left: none;
-            transform: rotate(45deg);
+            top: 3px;
+            left: 3px;
+            width: 8px;
+            height: 8px;
+            background: white;
+            border-radius: 50%;
         }
 
-        .form-submit {
+        .booking-course-radio:checked + span {
+            color: var(--accent);
+            font-weight: 500;
+        }
+
+        .booking-course-radio:checked ~ span {
+            color: var(--accent);
+            font-weight: 500;
+        }
+
+        .booking-submit {
             width: 100%;
             padding: 16px;
             background: var(--accent);
             color: #fff;
-            font-family: inherit;
-            font-size: 15px;
+            font-family: 'Oswald', sans-serif;
+            font-size: 14px;
             font-weight: 500;
-            letter-spacing: 0.04em;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
             border: none;
             border-radius: 14px;
             cursor: pointer;
-            transition: background 0.25s ease, transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.25s ease;
-            margin-top: 8px;
+            transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+            margin-top: 4px;
         }
 
-        .form-submit:hover {
+        .booking-submit:hover {
             background: var(--accent-deep);
             transform: translateY(-2px);
-            box-shadow: 0 8px 24px rgba(232, 122, 61, 0.3);
+            box-shadow: 0 8px 28px rgba(232,122,61,0.32);
+        }
+
+        .booking-submit:active {
+            transform: translateY(0px) scale(0.98);
+        }
+
+        .booking-section.visible .booking-left-eyebrow,
+        .booking-section.visible .booking-left-title,
+        .booking-section.visible .booking-left-desc,
+        .booking-section.visible .booking-contact-list,
+        .booking-section.visible .booking-card {
+            opacity: 1;
+            transform: translate(0);
+        }
+
+        @media (max-width: 900px) {
+            .booking-section {
+                grid-template-columns: 1fr;
+            }
+            .booking-left {
+                position: relative;
+                height: auto;
+                padding: 60px 32px 40px;
+            }
+            .booking-right {
+                position: relative;
+                height: auto;
+                padding: 0 32px 60px;
+            }
+            .booking-card {
+                padding: 36px 28px;
+            }
         }
 
         /* Footer */
@@ -1463,23 +1654,48 @@
 
     <!-- Booking -->
     <section id="booking" class="booking-section">
-        <div class="booking-wrapper">
-            <div class="section-header" style="text-align: center; margin-left: auto; margin-right: auto;">
-                <div class="section-eyebrow" style="justify-content: center;">Booking</div>
-                <h2 class="section-title">预约试听</h2>
-                <p class="section-desc" style="text-align: center;">填写下方信息，我们将在 24 小时内与您联系</p>
+        <div class="booking-left">
+            <div class="booking-left-eyebrow">Join Us</div>
+            <h2 class="booking-left-title">预约<br>体验课</h2>
+            <p class="booking-left-desc">填写表单，我们将在 24 小时内与您联系，为孩子安排一次免费的试听体验。</p>
+            <div class="booking-contact-list">
+                <div class="booking-contact-item">
+                    <div class="booking-contact-icon">📍</div>
+                    <div>
+                        <div class="booking-contact-label">校区地址</div>
+                        <div class="booking-contact-value">芜湖市弋江区新时代商业街19#221-223</div>
+                    </div>
+                </div>
+                <div class="booking-contact-item">
+                    <div class="booking-contact-icon">📞</div>
+                    <div>
+                        <div class="booking-contact-label">联系电话</div>
+                        <div class="booking-contact-value">0553-2866832</div>
+                    </div>
+                </div>
+                <div class="booking-contact-item">
+                    <div class="booking-contact-icon">💬</div>
+                    <div>
+                        <div class="booking-contact-label">微信同号</div>
+                        <div class="booking-contact-value">19315393167</div>
+                    </div>
+                </div>
             </div>
-            <div class="booking-form reveal">
+        </div>
+        <div class="booking-right">
+            <div class="booking-card">
+                <div class="booking-card-title">预约信息</div>
+                <div class="booking-card-sub">* 为必填项</div>
                 <form id="bookingForm">
-                    <div class="form-grid">
-                        <div class="form-group">
-                            <label class="form-label">孩子姓名 <span class="required">*</span></label>
-                            <input type="text" name="childName" required class="form-input" placeholder="请输入孩子姓名">
+                    <div class="booking-form-grid">
+                        <div class="booking-form-group">
+                            <label class="booking-form-label">孩子姓名 <span>*</span></label>
+                            <input type="text" name="childName" required class="booking-form-input" placeholder="请输入孩子姓名">
                         </div>
-                        <div class="form-group">
-                            <label class="form-label">孩子年龄 <span class="required">*</span></label>
-                            <select name="childAge" required class="form-select">
-                                <option value="">请选择年龄</option>
+                        <div class="booking-form-group">
+                            <label class="booking-form-label">孩子年龄 <span>*</span></label>
+                            <select name="childAge" required class="booking-form-select">
+                                <option value="">请选择</option>
                                 <option value="3-4">3-4 岁</option>
                                 <option value="5-6">5-6 岁</option>
                                 <option value="7-8">7-8 岁</option>
@@ -1487,37 +1703,36 @@
                                 <option value="11-12">11-12 岁</option>
                             </select>
                         </div>
-                        <div class="form-group full">
-                            <label class="form-label">联系电话 <span class="required">*</span></label>
-                            <input type="tel" name="phone" required class="form-input" placeholder="请输入手机号">
+                        <div class="booking-form-group full">
+                            <label class="booking-form-label">联系电话 <span>*</span></label>
+                            <input type="tel" name="phone" required class="booking-form-input" placeholder="手机号码">
                         </div>
-                        <div class="form-group full">
-                            <label class="form-label">意向课程</label>
-                            <div class="form-checkbox-group">
-                                <label class="form-checkbox-label">
-                                    <input type="checkbox" name="course" value="english" class="form-checkbox">
-                                    英语
+                        <div class="booking-form-group full">
+                            <label class="booking-form-label">意向课程</label>
+                            <div class="booking-course-group">
+                                <label class="booking-course-label">
+                                    <input type="radio" name="course" value="english" class="booking-course-radio">
+                                    <span>英语</span>
                                 </label>
-                                <label class="form-checkbox-label">
-                                    <input type="checkbox" name="course" value="math" class="form-checkbox">
-                                    数学
+                                <label class="booking-course-label">
+                                    <input type="radio" name="course" value="math" class="booking-course-radio">
+                                    <span>数学</span>
+                                </label>
+                                <label class="booking-course-label">
+                                    <input type="radio" name="course" value="both" class="booking-course-radio">
+                                    <span>两者皆可</span>
                                 </label>
                             </div>
                         </div>
-                        <div class="form-group full">
-                            <label class="form-label">备注留言</label>
-                            <textarea name="remark" rows="3" class="form-textarea" placeholder="有什么想了解的，请留言"></textarea>
+                        <div class="booking-form-group full">
+                            <label class="booking-form-label">备注留言</label>
+                            <textarea name="remark" rows="3" class="booking-form-textarea" placeholder="有什么想了解的，请留言"></textarea>
                         </div>
-                        <div class="form-group full">
-                            <button type="submit" class="form-submit">提交预约</button>
+                        <div class="booking-form-group full">
+                            <button type="submit" class="booking-submit">提交预约</button>
                         </div>
                     </div>
                 </form>
-                <div id="successMessage" class="hidden" style="text-align: center; padding: 48px 24px;">
-                    <div style="font-size: 48px; margin-bottom: 16px;">✓</div>
-                    <h3 style="font-family: 'Playfair Display', serif; font-size: 24px; color: var(--text-primary); margin-bottom: 12px;">预约成功</h3>
-                    <p style="color: var(--text-secondary); font-size: 14px;">我们将在 24 小时内与您联系，感谢您的信任。</p>
-                </div>
             </div>
         </div>
     </section>
@@ -1600,6 +1815,18 @@
             });
         }, { threshold: 0.15 });
         if (aboutSection) aboutObserver.observe(aboutSection);
+
+        // Booking section scroll animation
+        const bookingSection = document.querySelector('.booking-section');
+        const bookingObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    bookingObserver.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.15 });
+        if (bookingSection) bookingObserver.observe(bookingSection);
 
         // Form submission
         document.getElementById('bookingForm').addEventListener('submit', function(e) {
