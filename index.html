@@ -330,8 +330,7 @@
 
         .hero-image-card {
             width: 100%;
-            height: 50vh;
-            min-height: 280px;
+            min-height: 200px;
             border-radius: 20px;
             overflow: hidden;
             box-shadow: -24px 24px 64px rgba(26,24,20,0.12), 0 16px 48px rgba(26,24,20,0.08);
@@ -1855,24 +1854,6 @@
         });
 
         // Force hero centering via JS
-        function centerHeroContent() {
-            var hero = document.querySelector('.hero');
-            var content = document.querySelector('.hero-content');
-            var image = document.querySelector('.hero-image');
-            if (!hero || !content) return;
-            var heroH = hero.offsetHeight;
-            var contentH = content.offsetHeight;
-            var imageH = image ? image.offsetHeight : 0;
-            var maxH = Math.max(contentH, imageH);
-            var offset = (heroH - maxH) / 2;
-            if (offset > 0) {
-                content.style.paddingTop = offset + 'px';
-                if (image) image.style.paddingTop = offset + 'px';
-            }
-        }
-        window.addEventListener('load', centerHeroContent);
-        window.addEventListener('resize', centerHeroContent);
-
         // Scroll snap enhancer for touchpad momentum and mouse wheel
         (function() {
             const sections = document.querySelectorAll('section[id]');
