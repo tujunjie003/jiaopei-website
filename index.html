@@ -599,16 +599,16 @@
             gap: 0;
             position: relative;
             overflow: hidden;
+            padding-top: 72px;
+            padding-bottom: clamp(28px, 4vw, 48px);
         }
 
         .about-left {
             display: flex;
             flex-direction: column;
             justify-content: center;
-            padding: clamp(60px, 8vw, 120px) clamp(40px, 5vw, 80px);
-            position: sticky;
-            top: 0;
-            height: 100dvh;
+            padding-left: clamp(40px, 5vw, 80px);
+            padding-right: clamp(40px, 5vw, 80px);
         }
 
         .about-eyebrow {
@@ -684,10 +684,14 @@
         }
 
         .about-right {
-            padding: clamp(60px, 8vw, 120px) clamp(40px, 5vw, 80px);
+            padding-left: clamp(40px, 5vw, 80px);
+            padding-right: clamp(40px, 5vw, 80px);
             display: flex;
             flex-direction: column;
             justify-content: center;
+            position: sticky;
+            top: 0;
+            height: 100dvh;
         }
 
         .about-features {
