@@ -473,11 +473,12 @@
 
         .courses-title {
             font-family: 'Playfair Display', 'Noto Serif SC', Georgia, serif;
-            font-size: clamp(26px, 2.8vw, 44px);
+            font-size: clamp(42px, 4.5vw, 72px);
             font-weight: 600;
-            color: var(--text-primary);
-            letter-spacing: -0.04em;
-            line-height: 1.0;
+            color: var(--accent);
+            letter-spacing: -0.03em;
+            line-height: 1.08;
+            margin-bottom: 36px;
         }
 
         .courses-desc {
@@ -544,6 +545,7 @@
 
         .course-body {
             padding: 16px 18px 18px;
+            justify-content: flex-end;
             display: flex;
             flex-direction: column;
             gap: 8px;
@@ -654,7 +656,6 @@
             line-height: 1.08;
             color: var(--text-primary);
             letter-spacing: -0.03em;
-            margin-bottom: 36px;
             opacity: 0;
             transform: translateY(20px);
             transition: all 0.7s cubic-bezier(0.16, 1, 0.3, 1) 0.1s;
