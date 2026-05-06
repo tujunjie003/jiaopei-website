@@ -498,22 +498,22 @@
 
         .course-card {
             background: var(--bg-card);
-            border-radius: 16px;
+            border-radius: 20px;
             overflow: hidden;
-            box-shadow: 0 1px 3px rgba(26,24,20,0.04), 0 4px 16px rgba(26,24,20,0.06);
-            transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.35s ease;
+            box-shadow: 0 2px 12px rgba(26,24,20,0.06), 0 8px 32px rgba(26,24,20,0.06);
+            transition: all 0.45s cubic-bezier(0.16, 1, 0.3, 1);
             display: flex;
             flex-direction: column;
         }
 
         .course-card:hover {
-            transform: translateY(-4px) scale(1.01);
-            box-shadow: 0 4px 16px rgba(26,24,20,0.08), 0 12px 40px rgba(26,24,20,0.12);
+            transform: translateY(-6px);
+            box-shadow: 0 8px 32px rgba(26,24,20,0.1), 0 20px 60px rgba(26,24,20,0.1);
         }
 
         .course-image {
             position: relative;
-            aspect-ratio: 3 / 2;
+            aspect-ratio: 16 / 9;
             overflow: hidden;
         }
 
@@ -532,11 +532,11 @@
             position: absolute;
             top: 14px;
             left: 14px;
-            padding: 5px 10px;
+            padding: 6px 12px;
             background: rgba(255, 255, 255, 0.92);
             backdrop-filter: blur(8px);
             border-radius: 100px;
-            font-size: 10px;
+            font-size: 11px;
             font-weight: 500;
             letter-spacing: 0.02em;
         }
@@ -545,11 +545,11 @@
         .course-tag--blue { color: #3B82F6; }
 
         .course-body {
-            padding: 16px 18px 18px;
-            justify-content: flex-end;
+            padding: 20px 22px 22px;
             display: flex;
-            flex-direction: row;
-            gap: 16px;
+            flex-direction: column;
+            gap: 10px;
+            flex: 1;
             align-items: center;
             flex: 1;
         }
@@ -558,8 +558,7 @@
             font-family: 'Oswald', sans-serif;
             font-size: clamp(18px, 1.5vw, 22px);
             font-weight: 600;
-            letter-spacing: -0.02em;
-            line-height: 1.2;
+            letter-spacing: -0.01em;
         }
 
         .course-card--english .course-title { color: var(--accent); }
@@ -583,7 +582,7 @@
             padding: 4px 10px;
             background: var(--bg-secondary);
             border-radius: 100px;
-            font-size: 10px;
+            font-size: 11px;
             font-weight: 400;
             color: var(--text-muted);
         }
@@ -631,7 +630,7 @@
 
         .about-eyebrow {
             font-family: 'Oswald', sans-serif;
-            font-size: 10px;
+            font-size: 11px;
             font-weight: 500;
             letter-spacing: 0.18em;
             text-transform: uppercase;
@@ -695,7 +694,7 @@
         }
 
         .about-meta-label {
-            font-size: 10px;
+            font-size: 11px;
             color: var(--text-muted);
             letter-spacing: 0.04em;
             text-transform: uppercase;
@@ -769,8 +768,7 @@
             font-size: clamp(26px, 1.4vw, 30px);
             font-weight: 500;
             color: var(--text-primary);
-            letter-spacing: -0.02em;
-            line-height: 1.2;
+            letter-spacing: -0.01em;
         }
 
         .about-feature-text {
@@ -803,7 +801,7 @@
         }
 
         .about-contact-label {
-            font-size: 10px;
+            font-size: 11px;
             font-weight: 400;
             color: var(--text-muted);
             letter-spacing: 0.06em;
@@ -916,7 +914,7 @@
 
         .booking-left-eyebrow {
             font-family: 'Oswald', sans-serif;
-            font-size: 10px;
+            font-size: 11px;
             font-weight: 500;
             letter-spacing: 0.18em;
             text-transform: uppercase;
@@ -991,7 +989,7 @@
         }
 
         .booking-contact-label {
-            font-size: 10px;
+            font-size: 11px;
             font-weight: 400;
             color: var(--text-muted);
             letter-spacing: 0.06em;
@@ -1031,8 +1029,7 @@
             font-size: clamp(20px, 1.5vw, 26px);
             font-weight: 500;
             color: var(--text-primary);
-            letter-spacing: -0.02em;
-            line-height: 1.2;
+            letter-spacing: -0.01em;
             margin-bottom: 8px;
         }
 
@@ -1063,7 +1060,7 @@
 
         .booking-form-label {
             font-family: 'Oswald', sans-serif;
-            font-size: 10px;
+            font-size: 11px;
             font-weight: 500;
             letter-spacing: 0.08em;
             text-transform: uppercase;
@@ -1498,7 +1495,7 @@
             }
 
             .stat-label {
-                font-size: 10px;
+                font-size: 11px;
             }
 
             .btn-primary,
@@ -1573,7 +1570,7 @@
             <!-- English Course -->
             <div class="course-card course-card--english reveal">
                 <div class="course-image">
-                    <img src="https://images.unsplash.com/photo-1546410531-bb4caa6b424d?w=900&h=560&fit=crop&q=80" alt="英语课堂">
+                    <img src="https://images.unsplash.com/photo-1546410531-bb4caa6b424d?w=900&h=506&fit=crop&q=80" alt="英语课堂">
                     <div class="course-tag course-tag--orange">长颈鹿英语系列</div>
                 </div>
                 <div class="course-body">
@@ -1591,7 +1588,7 @@
             <!-- Math Course -->
             <div class="course-card course-card--math reveal">
                 <div class="course-image">
-                    <img src="https://images.unsplash.com/photo-1635070041078-e363dbe005cb?w=900&h=560&fit=crop&q=80" alt="数学课堂">
+                    <img src="https://images.unsplash.com/photo-1635070041078-e363dbe005cb?w=900&h=506&fit=crop&q=80" alt="数学课堂">
                     <div class="course-tag course-tag--blue">未来魔法校系列</div>
                 </div>
                 <div class="course-body">
