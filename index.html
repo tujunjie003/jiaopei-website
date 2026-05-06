@@ -1684,7 +1684,7 @@
         <div class="booking-right">
             <div class="booking-card">
                 <div class="booking-card-title">预约信息</div>
-                <div class="booking-card-sub">* 为必填项</div>
+                
                 <form id="bookingForm">
                     <div class="booking-form-grid">
                         <div class="booking-form-group">
@@ -1695,31 +1695,32 @@
                             <label class="booking-form-label">孩子年龄 <span>*</span></label>
                             <select name="childAge" required class="booking-form-select">
                                 <option value="">请选择</option>
-                                <option value="3-4">3-4 岁</option>
-                                <option value="5-6">5-6 岁</option>
-                                <option value="7-8">7-8 岁</option>
-                                <option value="9-10">9-10 岁</option>
-                                <option value="11-12">11-12 岁</option>
+                                <option value="3">3 岁</option>
+                                <option value="4">4 岁</option>
+                                <option value="5">5 岁</option>
+                                <option value="6">6 岁</option>
+                                <option value="7">7 岁</option>
+                                <option value="8">8 岁</option>
+                                <option value="9">9 岁</option>
+                                <option value="10">10 岁</option>
+                                <option value="11">11 岁</option>
+                                <option value="12">12 岁</option>
                             </select>
                         </div>
                         <div class="booking-form-group full">
                             <label class="booking-form-label">联系电话 <span>*</span></label>
-                            <input type="tel" name="phone" required class="booking-form-input" placeholder="手机号码">
+                            <input type="tel" name="phone" required class="booking-form-input" placeholder="手机号码" pattern="[0-9]{11}" minlength="11" maxlength="11">
                         </div>
                         <div class="booking-form-group full">
-                            <label class="booking-form-label">意向课程</label>
+                            <label class="booking-form-label">意向课程 <span>*</span></label>
                             <div class="booking-course-group">
                                 <label class="booking-course-label">
-                                    <input type="radio" name="course" value="english" class="booking-course-radio">
+                                    <input type="checkbox" name="course" value="english" required class="booking-course-radio">
                                     <span>英语</span>
                                 </label>
                                 <label class="booking-course-label">
-                                    <input type="radio" name="course" value="math" class="booking-course-radio">
+                                    <input type="checkbox" name="course" value="math" class="booking-course-radio">
                                     <span>数学</span>
-                                </label>
-                                <label class="booking-course-label">
-                                    <input type="radio" name="course" value="both" class="booking-course-radio">
-                                    <span>两者皆可</span>
                                 </label>
                             </div>
                         </div>
