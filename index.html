@@ -1809,6 +1809,42 @@
                 }
             });
         });
+
+        // Scroll snap enhancer for touchpad momentum and mouse wheel
+        (function() {
+            const sections = document.querySelectorAll('section[id]');
+            let scrollTimeout;
+            let isSnapping = false;
+
+            function snapToNearestSection() {
+                const scrollTop = window.scrollY;
+                const windowH = window.innerHeight;
+                let bestSection = null;
+                let bestScore = Infinity;
+
+                sections.forEach(sec => {
+                    const rect = sec.getBoundingClientRect();
+                    const secTop = rect.top + scrollTop;
+                    const score = Math.abs(scrollTop + windowH * 0.35 - secTop);
+                    if (score < bestScore) {
+                        bestScore = score;
+                        bestSection = sec;
+                    }
+                });
+
+                if (bestSection && bestScore > 60) {
+                    isSnapping = true;
+                    bestSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    setTimeout(function() { isSnapping = false; }, 700);
+                }
+            }
+
+            window.addEventListener('scroll', function() {
+                if (isSnapping) return;
+                clearTimeout(scrollTimeout);
+                scrollTimeout = setTimeout(snapToNearestSection, 150);
+            }, { passive: true });
+        })();
     </script>
 </body>
 </html>
