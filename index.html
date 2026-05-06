@@ -1854,6 +1854,25 @@
             });
         });
 
+        // Force hero centering via JS
+        function centerHeroContent() {
+            var hero = document.querySelector('.hero');
+            var content = document.querySelector('.hero-content');
+            var image = document.querySelector('.hero-image');
+            if (!hero || !content) return;
+            var heroH = hero.offsetHeight;
+            var contentH = content.offsetHeight;
+            var imageH = image ? image.offsetHeight : 0;
+            var maxH = Math.max(contentH, imageH);
+            var offset = (heroH - maxH) / 2;
+            if (offset > 0) {
+                content.style.paddingTop = offset + 'px';
+                if (image) image.style.paddingTop = offset + 'px';
+            }
+        }
+        window.addEventListener('load', centerHeroContent);
+        window.addEventListener('resize', centerHeroContent);
+
         // Scroll snap enhancer for touchpad momentum and mouse wheel
         (function() {
             const sections = document.querySelectorAll('section[id]');
