@@ -669,9 +669,18 @@
             color: var(--text-muted);
             line-height: 1.85;
             max-width: 42ch;
-            opacity: 0;
-            transform: translateX(-20px);
-            transition: all 0.7s cubic-bezier(0.16, 1, 0.3, 1) 0.2s;
+        }
+
+        .about-desc-block {
+            padding: 0;
+        }
+
+        .about-desc-block p {
+            font-size: clamp(14px, 1.1vw, 16px);
+            font-weight: 300;
+            color: var(--text-muted);
+            line-height: 1.9;
+            max-width: 100ch;
         }
 
         .about-meta {
@@ -701,8 +710,8 @@
         }
 
         .about-right {
-            padding-left: clamp(40px, 5vw, 80px);
-            padding-right: clamp(40px, 5vw, 80px);
+            padding-left: clamp(16px, 2vw, 32px);
+            padding-right: clamp(16px, 2vw, 32px);
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -849,7 +858,11 @@
             transform: translate(0);
         }
 
-        .about-section.visible .about-feature-item:nth-child(1) { transition-delay: 0.15s; }
+        .about-section.visible .about-desc-block {
+            opacity: 1;
+            transform: translateX(0);
+            transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.3s;
+        }
         .about-section.visible .about-feature-item:nth-child(2) { transition-delay: 0.25s; }
         .about-section.visible .about-feature-item:nth-child(3) { transition-delay: 0.35s; }
 
@@ -1605,8 +1618,8 @@
     <!-- About -->
     <section id="about" class="about-section">
         <div class="about-left">
-                        <h2 class="about-title">关于我们</h2>
-            <p class="about-desc">用专业和热爱，点亮每一个孩子的成长之路。我们相信：每个孩子都有独特的潜能，合适的教育方式能让他们踮起脚尖，看见更大的世界。</p>
+                        <h2 class="about-title">我们相信</h2>
+            <p class="about-desc">站高一点，世界就不一样。</p>
             <div class="about-meta">
                 <div class="about-meta-item">
                     <div class="about-meta-num">300+</div>
@@ -1623,28 +1636,8 @@
             </div>
         </div>
         <div class="about-right">
-            <div class="about-features">
-                <div class="about-feature-item">
-                    <div class="about-feature-icon">01</div>
-                    <div class="about-feature-body">
-                        <h4 class="about-feature-title">精准定位</h4>
-                        <p class="about-feature-text">根据孩子年龄与基础，匹配合适班级与进度，拒绝一刀切，让每一步都扎实有效。</p>
-                    </div>
-                </div>
-                <div class="about-feature-item">
-                    <div class="about-feature-icon">02</div>
-                    <div class="about-feature-body">
-                        <h4 class="about-feature-title">趣味引导</h4>
-                        <p class="about-feature-text">用游戏、故事与互动激发学习兴趣，让孩子在快乐中建立自信，在探索中爱上学习。</p>
-                    </div>
-                </div>
-                <div class="about-feature-item">
-                    <div class="about-feature-icon">03</div>
-                    <div class="about-feature-body">
-                        <h4 class="about-feature-title">效果可见</h4>
-                        <p class="about-feature-text">定期汇报学习进度与成长变化，让家长每一步都能看到孩子的突破与蜕变。</p>
-                    </div>
-                </div>
+            <div class="about-desc-block">
+                <p>芜湖长颈鹿成长中心，不是动物园，但这里住着一只长颈鹿。<br>它脖子很长，不是因为贪吃树上的叶子，是因为它总想看远一点、看多一点。<br>我们也一样。<br><br>我们专注于3-12岁英语和6-12岁数学培优，不是因为"培优"这个词好听，是因为我们相信：每个孩子都有独特的潜能，合适的教育方式能让他们踮起脚尖，看见更大的世界。<br><br>于是我们做了"伸长脖子的课"——<br>英语课上，孩子们不只是背单词，是用另一种语言去认识世界；<br>数学课上，孩子们不只是刷题，是用另一种思维去理解规律。<br><br>我们认真做两件事：<br>用专业和热爱，帮孩子把学科成绩往上提；<br>用长颈鹿的耐心，陪孩子把眼光放远。<br><br>不是每个孩子都要长成最高的那棵树，<br>但我们希望，每个孩子都能拥有自己的高度，和看向远方的脖子。<br><br>如果有一天你路过这里，欢迎进来看看。<br>那只长颈鹿，正伸着脖子等你。</p>
             </div>
         </div>
     </section>
