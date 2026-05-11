@@ -71,6 +71,29 @@ body {
   margin: 0 auto var(--sp-6);
   flex-wrap: wrap;
 }
+.semester-group {
+  display: flex;
+  gap: var(--sp-4);
+  align-items: center;
+}
+.semester-group label {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-1);
+  cursor: pointer;
+  color: var(--text-secondary);
+  font-size: 0.9em;
+  transition: color var(--duration-fast);
+}
+.semester-group label:has(input:checked) {
+  color: var(--accent);
+}
+.semester-group input[type="radio"] {
+  accent-color: var(--accent);
+  width: 16px;
+  height: 16px;
+  cursor: pointer;
+}
 select {
   flex: 1; min-width: 160px;
   padding: var(--sp-3) var(--sp-4);
@@ -210,7 +233,8 @@ select option { background: var(--surface); }
   }
 }
 </style>
-  <script type="module" crossorigin src="/assets/index-BmP7wrv5.js"></script>
+  <script type="module" crossorigin src="/assets/questionBank-BPIhY6V0.js"></script>
+  <link rel="modulepreload" crossorigin href="/assets/modulepreload-polyfill-wMinxHhO.js">
 </head>
 <body>
 
@@ -220,14 +244,15 @@ select option { background: var(--surface); }
 </div>
 
 <div class="controls">
-  <select id="gradeSelect" aria-label="选择年级学期">
-    <option value="1上">1年级·上</option>
-    <option value="1下">1年级·下</option>
-    <option value="2上">2年级·上</option>
-    <option value="2下">2年级·下</option>
-    <option value="3上">3年级·上</option>
-    <option value="3下">3年级·下</option>
+  <select id="gradeSelect" aria-label="选择年级">
+    <option value="1">1年级</option>
+    <option value="2">2年级</option>
+    <option value="3">3年级</option>
   </select>
+  <div class="semester-group" role="group" aria-label="选择学期">
+    <label><input type="radio" name="semester" value="上" checked> 上学期</label>
+    <label><input type="radio" name="semester" value="下"> 下学期</label>
+  </div>
   <button class="btn" id="generateBtn" aria-label="生成10道题验证">🎲 生成10道题验证</button>
 </div>
 

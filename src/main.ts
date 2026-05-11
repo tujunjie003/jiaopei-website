@@ -86,7 +86,8 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   generateBtn.addEventListener('click', () => {
-    const grade = gradeSelect.value as GradeSemester
-    validateGrade(grade)
+    const grade = gradeSelect.value
+    const semester = (document.querySelector('input[name="semester"]:checked') as HTMLInputElement).value
+    validateGrade(`${grade}${semester}` as GradeSemester)
   })
 })

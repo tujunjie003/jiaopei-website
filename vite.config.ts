@@ -6,16 +6,10 @@ export default defineConfig({
     outDir: 'dist',
     emptyOutDir: true,
     rollupOptions: {
-      input: resolve(__dirname, 'index.html'),
-      output: {
-        // Inline JS if < 4KB
-        assetFileNames: 'assets/[name][extname]',
-        manualChunks: undefined
+      input: {
+        questionBank: resolve(__dirname, 'index.html'),
+        cellManager: resolve(__dirname, 'cell-manager.html'),
       }
-    },
-    // Inline small assets as base64
-    assetsInlineLimit: 10000,
-  },
-  // Disable HTML injection so output index.html is self-contained
-  appType: 'mpa'
+    }
+  }
 })
